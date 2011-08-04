@@ -29,5 +29,11 @@ You can access logs either by user or all...
 
 If you want to log along with information of currently logged in user then you should consider adding a before filter to application controller which sets ActiveLog.current = current_user
 
+In addition, you can get the value of an attribute at a given time in the past by using the dynamic *_at_timestamp methods that get created for each model attribute.  For example:
+
+<pre>
+  >>u = User.first
+  >>u.last_name_at_timestamp(1.week.ago)
+</pre>
 
 Copyright (c) 2010 Abhishek Parolkar, released under the MIT license
